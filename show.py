@@ -72,8 +72,6 @@ def is_stream_online(username):
     }
     resp = requests.get(url, headers=headers)
     return "isLiveBroadcast" in resp.text
-while is_stream_online("ggstartvtz"):
-    print(is_stream_online("ggstartvtz"))
 with SB(uc=True, test=True,locale=f"{language_code.upper()}") as eyyetete:
     eyyetete.execute_cdp_cmd(
         "Emulation.setGeolocationOverride",
@@ -89,8 +87,8 @@ with SB(uc=True, test=True,locale=f"{language_code.upper()}") as eyyetete:
     )
     eyyetete.set_window_size(resolution.width, resolution.height)
 
-    if is_stream_online("ggstartvtz"):
-        url = "https://www.twitch.tv/ggstartvtz"
+    if is_stream_online("brutalles"):
+        url = "https://www.twitch.tv/brutalles"
         eyyetete.uc_open_with_reconnect(url, 5)
         if eyyetete.is_element_present('button:contains("Accept")'):
             eyyetete.uc_click('button:contains("Accept")', reconnect_time=4)
@@ -100,7 +98,7 @@ with SB(uc=True, test=True,locale=f"{language_code.upper()}") as eyyetete:
             eyyetete.sleep(10)
             if sfauiojt2.is_element_present('button:contains("Accept")'):
                 sfauiojt2.uc_click('button:contains("Accept")', reconnect_time=4)
-            while is_stream_online("ggstartvtz"):
+            while is_stream_online("brutalles"):
                 eyyetete.sleep(10)
             eyyetete.quit_extra_driver()
     eyyetete.sleep(1)
