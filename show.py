@@ -86,10 +86,12 @@ with SB(uc=True, test=True,locale=f"{language_code.upper()}") as eyyetete:
         {"timezoneId": timezone_id}
     )
     eyyetete.set_window_size(resolution.width, resolution.height)
-
+    url = "https://www.twitch.tv/brutalles"
+    eyyetete.uc_open_with_reconnect(url, 4)
+    eyyetete.sleep(10)
     if is_stream_online("brutalles"):
         url = "https://www.twitch.tv/brutalles"
-        eyyetete.uc_open_with_reconnect(url, 5)
+        #eyyetete.uc_open_with_reconnect(url, 5)
         if eyyetete.is_element_present('button:contains("Accept")'):
             eyyetete.uc_click('button:contains("Accept")', reconnect_time=4)
         if True:
